@@ -1,0 +1,69 @@
+
+
+不要再尝试CLion了！！！
+不要再尝试CLion了！！！
+不要再尝试CLion了！！！
+
+OpenCV版本vc15
+vs2019
+
+
+安装时的配置：
+c++:
+https://blog.csdn.net/Smile_Bit_Seven/article/details/109509557
+
+python:
+https://blog.csdn.net/qq_29519575/article/details/91398974
+
+
+
+
+各函数用法：
+
+Mat img;
+
+img =imread("xxx\\xxx.jpg");（读入）
+
+
+显示：
+
+void fullShow(const String &winname,InputArray mat);
+
+fullShow("src", src);
+
+void fullShow(const String& winname, InputArray mat) {
+namedWindow(winname, WINDOW_NORMAL);//（新建窗口）
+setWindowProperty(winname, WND_PROP_FULLSCREEN, WINDOW_FULLSCREEN);//（全屏）
+imshow(winname, mat);//（显示）
+}
+
+
+
+
+destroyWindow("src");（关窗口）
+
+
+
+
+ char a= waitKey(0);
+    if (a == '1') {
+        imshow("src", src);
+        waitKey(5000);
+    }
+	（用waitkey调整窗口）
+	
+cvtColor(src, gray, COLOR_RGB2GRAY);（灰度）
+
+threshold(src, dst, 230, 255, THRESH_BINARY_INV);（二值化）
+threshold(gray, dst, 100, 255, THRESH_OTSU);（自动调参二值化）
+
+putText(src, "hello", Point(45, 30) , FONT_HERSHEY_SIMPLEX, 1, Scalar(0,0,0));（加文字，但不能输出中文）
+
+
+
+
+
+
+
+
+
